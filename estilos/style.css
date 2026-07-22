@@ -1,8 +1,124 @@
 @charset 'UFT-8';
 
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
 :root {
     --cor-principal: #1F3161;
     --cor-secundaria: #E95219;
     --cor-cinza: #606060;
-    
+}
+
+#nav-barra {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--cor-principal);
+    position: relative;
+}
+
+#logo img {
+    height: 100px;
+    padding: 10px 0px;
+}
+
+#menuToggle {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+    display: block;
+    padding: 0 10px;
+}
+
+#menu {
+    list-style: none;
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--cor-principal);
+    z-index: 10;
+}
+
+#menu.aberto {
+    display: flex;
+}
+
+#menu li {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#menu li a {
+    display: block;
+    padding: 15px 20px;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+#menu li a.ativo {
+    color: var(--cor-secundaria);
+}
+
+.cta-desktop {
+    display: none;
+}
+
+
+@media (min-width: 780px) {
+    #nav-barra {
+        padding: 15px 40px;
+    }
+
+    #menuToggle {
+        display: none;
+    }
+
+    #menu {
+        display: flex;
+        flex-direction: row;
+        position: static;
+        width: auto;
+        background: none;
+        gap: 30px;
+    }
+
+    #menu li {
+        border-top: none;
+    }
+
+    #menu li a {
+        padding: 5px 0;
+        font-size: 15px;
+        position: relative;
+    }
+
+    #menu li a.ativo {
+        color: white;
+    }
+
+    .cta-desktop {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background-color: var(--cor-secundaria);
+        color: white;
+        text-decoration: none;
+        padding: 12px 22px;
+        border-radius: 8px;
+        font-weight: 600;
+        font-size: 14px;
+        transition: background-color 0.2s ease;
+    }
+
+    .cta-desktop:hover {
+        background-color: var(--cor-secundaria);
+    }
 }
