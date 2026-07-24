@@ -61,6 +61,7 @@
     color: white;
     text-decoration: none;
     font-weight: 500;
+    font-size: 15px;
 }
 
 #menu li a.ativo {
@@ -71,10 +72,93 @@
     display: none;
 }
 
+#inicio {
+    background-color: var(--cor-principal);
+    color: white;
+    padding: 60px 40px;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+}
 
-@media (min-width: 780px) {
+#txt-inicio {
+    
+}
+
+.txt-escuro h1 {
+    font-size: 50px;
+    padding: 20px 0;
+}
+
+.txt-escuro p {
+    font-size: 20px;
+    line-height: 1.3em;
+    padding-bottom: 20px;
+}
+
+#button-inicio {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 70px;
+}
+
+.dark-button1 {
+    background-color: white;
+    color: var(--cor-principal);
+    border: none;
+    border-radius: 10px;
+    padding: 15px 50px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.dark-button2 {
+    background-color: var(--cor-principal);
+    color: var(--cor-secundaria);
+    border: 1px solid var(--cor-secundaria);
+    border-radius: 10px;
+    padding: 15px 50px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#img-inicio {
+    position: relative;
+}
+
+#img-inicio img {
+    position: relative;
+    width: 100%;
+    z-index: 1000;
+}
+
+.circle1 {
+    position: absolute;
+    background-image: linear-gradient(to right, rgb(255, 111, 0), orange);
+    padding: 20vw;
+    border-radius: 50%;
+    translate: -40px -40px;
+}
+
+.circle2 {
+    position: absolute;
+    background-image: linear-gradient(to right, rgba(255, 111, 0, 0.40), rgba(255, 132, 0, 0.40));
+    padding: 10vw;
+    border-radius: 50%;
+    translate: -100px 200px;
+}
+
+
+
+@media (min-width: 768px) {
     #nav-barra {
         padding: 15px 40px;
+    }
+
+    #logo img {
+        height: 70px;
+        padding: 10px 0px;
     }
 
     #menuToggle {
@@ -92,11 +176,12 @@
 
     #menu li {
         border-top: none;
+        font-size: 500px;
     }
 
     #menu li a {
-        padding: 5px 0;
-        font-size: 15px;
+        padding: 3px 0;
+        font-size: 12px;
         position: relative;
     }
 
@@ -107,18 +192,32 @@
     .cta-desktop {
         display: inline-flex;
         align-items: center;
-        gap: 8px;
+        gap: 3px;
         background-color: var(--cor-secundaria);
         color: white;
         text-decoration: none;
-        padding: 12px 22px;
+        padding: 8px 18px;
         border-radius: 8px;
         font-weight: 600;
-        font-size: 14px;
+        font-size: 12px;
         transition: background-color 0.2s ease;
     }
 
     .cta-desktop:hover {
         background-color: var(--cor-secundaria);
+    }
+}
+
+@media (min-width: 1200px) {
+    #logo img {
+        height: 110px;
+    }
+
+    #menu li a {
+        font-size: 20px;
+    }
+
+    .cta-desktop {
+        font-size: 20px;
     }
 }
